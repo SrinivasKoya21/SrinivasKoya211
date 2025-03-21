@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head> Student info</head>
+    <body>
+        <div id="demo">
+            <input type="text" placeholder="Name" id="name">
+            <input type="text" placeholder="Student ID" id="studentid">
+            <input type="text" placeholder="University" id="university">
+            <input type="text" placeholder="Course" id="course">
+            <input type="text" placeholder="Year" id="year">
+        </div>
+        <button onclick="insert()">Insert Data</button>
+        <button onclick="showinfo()">Show Information</button>
+
+        <div id="output">Info</div>
+
+        <script>
+
+            let students =[]
+        
+
+            function insert() {
+                const person = {
+                    name: document.getElementById("name").value,
+                    sid: document.getElementById("studentid").value,
+                    univ: document.getElementById("university").value,
+                    course: document.getElementById("course").value,
+                    year: document.getElementById("year").value,
+                    description: function() {
+                        return "I am " + this.name + 
+                               ", my student ID is " + this.sid + 
+                               ". I am from "+ this.univ +
+                               " university, from the background of " + this.course + 
+                               " in the year " + this.year + ".";
+                    }
+                }
+            };
+
+            students.push(person);
+
+            document.getElementById("name").value = "";
+            document.getElementById("studentid").value = "";
+            document.getElementById("university").value = "";
+            document.getElementById("course").value = "";
+            document.getElementById("year").value = "";
+
+            document.getElementById("output").innerHTML =<span>Student Records Saved</span>
+
+            function showinfo(){
+                if(students.length==0)
+                {
+                    document.getElementById("output").innerHTML="No Records Found!";
+                    return;
+                }
+
+                let result = "<ul>";
+                    students.forEach((student, index) => {
+                        result += `<li><strong>Record ${index + 1}:</strong> ${student.description()}</li>`;
+                    });
+                    result += "</ul>";
+            
+
+                document.getElementById("output").innerHTML = person.description();
+            }
+
+        </script>
+    </body>
+</html>

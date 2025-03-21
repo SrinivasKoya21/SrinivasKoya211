@@ -1,0 +1,37 @@
+div{
+    font-size: 24px;
+    width: 200px;
+    height: 160px;
+    margin:5px;
+    padding: 20px;
+    display: inline-block;
+    position:relative;
+}
+
+div.hoover{
+    cursor: pointer;
+    opacity:0.70;
+    scale: 1.2;
+    transition:all 0.5s;
+    background-color:red;
+}
+
+.div1.hover, .div2:hover, .div3.hover, .div4.hover, .div5.hover{
+    background-color:red;
+}
+.div1{
+    text-align: center;
+    color:blue;
+}
+.div2{
+    color:green;
+}
+.div3{
+    color:yellow;
+}
+.div4{
+    color:orange;
+}
+.div5{
+    color:purple;
+}

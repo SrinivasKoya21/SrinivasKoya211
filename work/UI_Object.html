@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Student Info</title>
+
+        <style> 
+            body{
+                text-align:center;
+                background-color:antiquewhite;
+            }
+            button{
+                padding: 2px;
+                margin: 5px;
+                cursor: pointer;
+            }
+            .insert-btn{
+                color:white;
+                background-color:red;
+            }
+            .clear-inputs-btn{ 
+                color:white;
+                background-color:green;
+            }
+            .show-info-btn{
+                color:white;
+                background-color:orange;
+            }
+            .clear-display-btn{
+                color:white;
+                background-color: blue;
+            }
+            button:hover{
+                opacity:0.8;
+            }
+
+            input {
+                padding: 5px;
+                width: 150px;
+                font-size: 14px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>Enter Student Details</h2>
+        <div id="demo">
+            <input type="text" placeholder="Name" id="name"><br><br>
+            <input type="text" placeholder="Student ID" id="studentid"><br><br>
+            <input type="text" placeholder="University" id="university"><br><br>
+            <input type="text" placeholder="Course" id="course"><br><br>
+            <input type="text" placeholder="Year" id="year"><br><br>
+        </div>
+        
+        <button class="insert-btn" onclick="insert()">Insert Data</button>
+        <button class="clear-inputs-btn" onclick="clearinputs()">Clear Inputs</button><br>
+        <button class="show-info-btn" onclick="showInfo()">Show Info</button>
+        <button class="clear-display-btn" onclick="cleardisplay()">Clear display</button><br><br>
+
+        <input style="width:100;" type="text" placeholder="Enter Search on records" id="search" onkeyup="searchRecords();">
+
+        <h3>Stored Student Records:</h3>
+        <div id="output"></div>
+
+        <script>
+            let students = [];
+
+            function Students(name, sid, univ, course, year){
+                this.name=name;
+                this.sid=sid;
+                this.univ=univ;
+                this.course=course;
+                this.year=year;
+                this.describe=function(){
+                    return "I am " + this.name + 
+                    ", my student ID is " + this.sid + 
+                    ". I am from "+ this.univ +
+                    " university, from the background of " + this.course + 
+                    " in the year " + this.year + ".";
+         }
+     };
+            function insert() {
+                
+                const name = document.getElementById("name").value;
+                const sid = document.getElementById("studentid").value;
+                const univ = document.getElementById("university").value;
+                const course = document.getElementById("course").value;
+                const year = document.getElementById("year").value;
+
+                if (name === "" || sid === "" || univ === "" || course === "" || year === "") {
+                    document.getElementById("output").innerHTML = "<span>Please fill all the fields!</span>";
+                    return;
+                }
+
+                let stud = new Students(name, sid, univ, course, year)
+                students.push(stud);
+
+                clearinputs();
+
+                document.getElementById("output").innerHTML = "<span style='color: green;'>Student record added successfully!</span>";
+            }
+
+            function showInfo() {
+                if (students.length === 0) {
+                    document.getElementById("output").innerHTML = "<span style='color: red;'>No records found!</span>";
+                    return;
+                }
+
+                let result = "<ul>";
+                students.forEach((student, index) => {
+                    result += `<li><strong>Record ${index + 1}:</strong> ${student.describe()}</li>`;
+                });
+                result += "</ul>";
+
+                document.getElementById("output").innerHTML = result;
+            }
+
+            function clearinputs(){
+                document.getElementById("name").value = "";
+                document.getElementById("studentid").value = "";
+                document.getElementById("university").value = "";
+                document.getElementById("course").value = "";
+                document.getElementById("year").value = "";
+            }
+                
+            function cleardisplay(){
+                document.getElementById("output").innerHTML ="";
+
+            }
+
+            function searchRecords() {
+                let query = document.getElementById("search").value.toLowerCase().trim();
+                let result = "";
+
+                if (query === "") {
+                    document.getElementById("output").innerHTML = "<span style='color: red;'>Please enter a search term!</span>";
+                    return;
+                }
+
+                for (let i = 0; i < students.length; i++) {
+                    let student = students[i];
+
+                    // Only search by Name and Student ID
+                    if (student.name.toLowerCase().includes(query) || student.sid.toLowerCase().includes(query)) {
+                        result += `<p><strong>Record ${i + 1}:</strong> ${student.describe()}</p>`;
+                    }
+                }
+
+                if (result === "") {
+                    document.getElementById("output").innerHTML = "<span style='color: red;'>No matching records found!</span>";
+                } else {
+                    document.getElementById("output").innerHTML = result;
+                }
+            }
+
+        </script>
+    </body>
+</html>

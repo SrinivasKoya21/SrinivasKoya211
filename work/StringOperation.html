@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function uppercase(){
+                let input = document.getElementById("inputText").value;
+                document.getElementById("output").value = input.toUpperCase();
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" placeholder="Enter text here" id="inputText" onchange="uppercase()">
+        <input placeholder="Output text generated" id="output" disabled>
+    </body>
+</html>

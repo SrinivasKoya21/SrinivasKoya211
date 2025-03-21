@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+
+    </head>
+    <body>
+        
+        <div id="demo">
+            <button onclick="student();">Student Info</button>
+        </div>
+        <script>
+            const person ={
+                name:"Srinivas",
+                sid:"S00453667",
+                course:"Computer Science",
+                subject:"Frontend",
+                year:"2025",
+                description: function(){
+                    return "I am "+this.name +" my student id is "+this.sid+" from the background of "+this.course+" studying "+this.subject+" in the year "+this.year;
+                }
+            };
+
+            function student(){
+                document.getElementById("demo").innerHTML=person.description();
+            }
+        </script>
+    </body>
+</html>

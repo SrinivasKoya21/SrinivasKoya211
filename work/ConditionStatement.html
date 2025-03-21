@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                text-align: center;
+                background-color: #f4f4f4;
+                margin: 50px;
+            }
+        </style>
+        <script> 
+            function calculate() {
+                let score = parseFloat(document.getElementById("score").value);
+                let result = "";
+
+                if (score > 80 && score <= 100) {
+                    result = "A";
+                } else if (score > 60 && score <= 80) {
+                    result = "B";
+                } else if (score > 40 && score <= 59) {
+                    result = "C";
+                } else {
+                    result = "F";
+                }
+
+                document.getElementById("grade").innerHTML = result;
+            }
+        </script>
+    </head>
+    <body>
+        <h2>Grade Calculator</h2>
+        <input type="number" placeholder="Enter score point" id="score" onkeyup="calculate()" min="0" max="100" <input type="number" placeholder="Enter score point" id="score" oninput="calculate()" min="0" max="100" style="width: 200px; height: 20px; font-size: 16px;">
+        <div>
+            Your grade is : <span id="grade"></span>
+        </div>
+    </body>
+</html>
+

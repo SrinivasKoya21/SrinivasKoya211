@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <style>
+            .btn{
+                font-size: 30px;
+                width: 150px;
+                background-color: rgba(0, 0, 0, 0);
+                border-radius: 15px;
+            }
+            .btn:hover{
+                cursor: pointer;
+                font-weight: bold;
+                background-color: rgba(0, 0, 0, 0.3);
+                transition: 0.3s;
+            }
+        </style>
+
+        <script>
+            function turn_on(){
+                document.getElementById("buld_img").src = "bulb_on.gif";
+            }
+            function turn_off(){
+                document.getElementById("buld_img").src = "bulb_off.gif";
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="container_div">
+            <div id="bulb_div">
+                <img id="buld_img" src="bulb_off.gif" />
+            </div>
+            <div id="buttons_div">
+                <button id="btn_on" class="btn" onclick="turn_on();">ON</button>
+                <button id="btn_off" class="btn" onclick="turn_off();">OFF</button>
+            </div>            
+        </div>
+    </body>
+</html>

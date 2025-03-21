@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<head>
+    <title>Google Hover Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .google {
+            display: flex;
+            gap: 8px;
+            font-size: 64px;
+            font-weight: bold;
+        }
+
+        .google span {
+            cursor: pointer;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .g { color: #4285F4; }
+        .o1 { color: #EA4335; }
+        .o2 { color: #FBBC05; }
+        .g2 { color: #34A853; }
+        .l { color: #EA4335; }
+        .e { color: #4285F4; }
+
+        .google span:hover {
+            transform: scale(1.2);
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="google">
+        <span class="g">G</span>
+        <span class="o1">o</span>
+        <span class="o2">o</span>
+        <span class="g2">g</span>
+        <span class="l">l</span>
+        <span class="e">e</span>
+    </div>
+</body>
+</html>

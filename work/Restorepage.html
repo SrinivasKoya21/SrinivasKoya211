@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Number Generator</title>
+</head>
+<body>
+    <div id="container">
+        <input type="text" placeholder="Enter Min Range" id="min">
+        <input type="text" placeholder="Enter Max Range" id="max">
+        <button onclick="Generate()">Generate Random Number</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        
+        let originalContent = document.getElementById("container").innerHTML;
+
+        function Generate() {
+            let x = parseInt(document.getElementById("min").value);
+            let y = parseInt(document.getElementById("max").value);
+
+            if (isNaN(x) || isNaN(y) || x > y) {
+                document.getElementById("output").innerHTML = "Invalid Input! Ensure min ≤ max.";
+                return;
+            }
+
+            let random = Math.floor(Math.random() * (y - x + 1)) + x;
+            document.getElementById("output").innerHTML = "Random Number: " + random;
+        }
+
+        function clear_everything(callback) {
+            document.getElementById("container").innerHTML = `
+                <h1 style="text-align: center; font-size: 32px; color: red;">Vanished</h1>
+                <button id="restoreButton" style="display: block; margin: 20px auto; padding: 10px 20px; font-size: 16px;">Restore Page</button>
+            `;
+            
+            document.getElementById("restoreButton").addEventListener('click', callback);
+        }
+
+        function restorePage() {
+            document.getElementById("container").innerHTML = originalContent;
+        }
+
+        setTimeout(function() {
+            clear_everything(restorePage);
+        }, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.sesha {
+    display: flex;
+    gap: 15px;
+    font-size: 100px;
+    font-weight: bold;
+}
+
+.sesha span {
+    cursor: pointer;
+    scale: 1;
+    transition: all 0.5s;
+}
+
+.s { color: #f9c700; }
+.e { color: #EA4335; }
+.s { color: #3c2d00; }
+.h { color: #d41286; }
+.a { color: #0bd630; }
+
+.sesha span:hover {
+    transform: scale(1.2);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

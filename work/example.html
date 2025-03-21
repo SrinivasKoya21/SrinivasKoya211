@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreativeSites</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        /* Left Section */
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .company-name {
+            font-size: 22px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+
+        /* Navigation */
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 2px solid black;
+            background: none;
+            cursor: pointer;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        /* Rounded Buttons for "About" & "Contact Us" */
+        .btn-round {
+            border-radius: 50px;
+        }
+
+        .btn:hover {
+            background: black;
+            color: white;
+        }
+
+        /* Main Body Layout */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 40px 20px;
+        }
+
+        .hero, .projects {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        /* Projects Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .thumbnail {
+            padding: 40px;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .thumbnail:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            background: white;
+            color: black;
+            padding: 20px;
+            text-align: center;
+            display: none;
+            position: relative;
+            width: 100%;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links div {
+            text-align: center;
+        }
+
+        .social-links img {
+            height: 30px;
+            display: block;
+            margin: auto;
+            width: auto;
+        }
+
+        .social-links p {
+            margin: 5px 0 0;
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-left {
+                flex-direction: column;
+            }
+
+            .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="header-left">
+            <div class="logo"><img src="brand_logo.png" alt="Company Logo"></div>
+            <div class="company-name">CreativeSites</div>
+        </div>
+        <nav class="nav-buttons">
+            <div class="btn">Services</div>
+            <div class="btn">Designs</div>
+            <div class="btn">Pricing</div>
+            <div class="btn btn-round">About</div>
+            <div class="btn btn-round">Contact Us</div>
+        </nav>
+    </header>
+
+    <!-- Body Section -->
+    <main class="container">
+        <section class="hero">
+            <h1>Responsive Sites</h1>
+            <p>With the best quality and pricing</p>
+            <p  class="description" style="height: 150vh; background: lightgray;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+                sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div class="buttons">
+                <button class="btn">Learn More</button>
+                <button class="btn">Trial</button>
+            </div>
+        </section>
+
+        <section class="projects">
+            <div class="grid">
+                <div class="thumbnail" style="background-color: green;">Project 1</div>
+                <div class="thumbnail" style="background-color: orange;">Project 2</div>
+                <div class="thumbnail" style="background-color: purple;">Project 3</div>
+                <div class="thumbnail" style="background-color: blue;">Project 4</div>
+                <div class="thumbnail" style="background-color: red;">Project 5</div>
+                <div class="thumbnail" style="background-color: cyan;">Project 6</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="social-links">
+            <div>
+                <img src="facebook.png" alt="Facebook">
+                <p>Facebook</p>
+            </div>
+            <div>
+                <img src="twitter.png" alt="Twitter">
+                <p>Twitter</p>
+            </div>
+            <div>
+                <img src="instagram.png" alt="Instagram">
+                <p>Instagram</p>
+            </div>
+            <div>
+                <img src="linkedin.png" alt="LinkedIn">
+                <p>LinkedIn</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Footer and Effects -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Footer appears when scrolling to bottom
+            window.addEventListener("scroll", function() {
+                let footer = document.getElementById("footer");
+                let scrollPosition = window.innerHeight + window.scrollY;
+                let pageHeight = document.body.offsetHeight;
+
+                if (scrollPosition >= pageHeight - 10) {
+                    footer.style.display = "block";
+                }
+            });
+
+            // Hover effects for thumbnails
+            let thumbnails = document.querySelectorAll(".thumbnail");
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener("mouseenter", () => {
+                    thumb.style.transform = "scale(1.1)";
+                    thumb.style.boxShadow = "0px 4px 10px rgba(0,0,0,0.2)";
+                });
+
+                thumb.addEventListener("mouseleave", () => {
+                    thumb.style.transform = "scale(1)";
+                    thumb.style.boxShadow = "none";
+                });
+            });
+        });
+    </script>
+</body>
+</html>
