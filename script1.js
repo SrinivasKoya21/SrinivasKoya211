@@ -33,3 +33,19 @@ resetButton.addEventListener("click", () => {
     document.getElementById("task-frame").src = "";
 });
 nav.appendChild(resetButton);
+
+window.addEventListener('scroll', function() {
+    const footer = document.getElementById('page-footer');
+    const body = document.body;
+    const html = document.documentElement;
+    const documentHeight = Math.max(body.scrollHeight, body.offsetHeight,
+                               html.clientHeight, html.scrollHeight, html.offsetHeight);
+    const windowHeight = window.innerHeight;
+    const scrollPosition = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+
+    if (documentHeight - windowHeight <= scrollPosition + 5) {
+        footer.style.display = 'block'; // Or 'flex', depending on your footer's layout
+    } else {
+        footer.style.display = 'block'; // Or 'none' if you want it hidden until bottom
+    }
+});
