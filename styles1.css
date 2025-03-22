@@ -1,27 +1,33 @@
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure body takes at least full viewport height */
-    background-color: #f8f8ff;
+    min-height: 100vh;
+    background-color: #f8f8f8;
 }
+
 header {
-    background: linear-gradient(135deg, #19a4a9, #113b55); /* Updated gradient */
-    color: #f1faee; /* Light text color */
+    background: linear-gradient(135deg, #294c60, #ffb380);
+    color: white;
     text-align: center;
-    padding: 10px; /* Reduced padding */
-    font-size: 24px;
+    padding: 15px;
     display: flex;
     align-items: center;
-    justify-content: space-around; /* Distribute items */
+    justify-content: space-around;
 }
 
 .header-img {
-    width: 100px; /* Smaller image size */
+    width: 120px; /* Increased image size */
     height: auto;
-    margin: 0 5px; /* Spacing */
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+header h1 {
+    font-family: 'Progress'; /* Robotic font for header title */
+    font-weight: bold;
 }
 
 .header-buttons {
@@ -29,19 +35,21 @@ header {
 }
 
 .header-btn {
-    background-color: #D65108; /* Button color */
-    color: #f1faee;
-    border: none;
-    padding: 8px 15px; /* Adjusted padding */
+    font-family: 'Caveat', cursive; /* Handwritten font for buttons */
+    background-color: #333;
+    color: white;
+    border: 1px solid #555;
+    padding: 10px 20px;
     margin: 0 5px;
     cursor: pointer;
-    font-size: 16px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    font-size: 18px; /* Increased font size */
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .header-btn:hover {
-    background-color: #d00000; /* Darker hover color */
+    background-color: #555;
+    transform: scale(1.05);
 }
 
 .container {
@@ -51,27 +59,28 @@ header {
 
 nav {
     width: 200px;
-    background-color: #e0f2fe;
+    background-color: #e0e0e0;
     padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
 .task-btn, #reset {
-    background-color: #a8dadc;
-    color: #1d3557;
+    font-family: 'Caveat', cursive; /* Handwritten font for task buttons */
+    background-color: #4a90e2;
+    color: white;
     border: none;
-    padding: 10px;
+    padding: 10px 15px;
     margin: 5px 0;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 18px; /* Increased font size */
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .task-btn:hover, #reset:hover {
-    background-color: #457b9d;
-    color: #f1faee;
+    background-color: #357abd;
+    transform: scale(1.05);
 }
 
 main {
@@ -85,19 +94,20 @@ main {
 iframe {
     width: 100%;
     height: 100%;
-    border: 2px solid #457b9d;
+    border: 2px solid #4a90e2;
     border-radius: 8px;
 }
 
 #page-footer {
-    background: linear-gradient(135deg,  #113b55, #20c2c8);;
-    color: #f1faee;
+    background: linear-gradient(135deg, #ffb380, #294c60);
+    color: white;
     text-align: center;
     padding: 10px;
     width: 100%;
-    /* Remove position: sticky; and bottom: 0; */
-    /* Let it flow naturally at the bottom */
+    font-family: 'Caveat', cursive; /* Handwritten font for task buttons */
+
 }
+
 .social-icons {
     display: flex;
     justify-content: center;
@@ -108,6 +118,11 @@ iframe {
     flex-direction: column;
     align-items: center;
     margin: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-item:hover {
+    transform: scale(1.1);
 }
 
 .social-icons img {
@@ -116,5 +131,5 @@ iframe {
     margin-bottom: 5px;
 }
 
-/* Add Montserrat font from Google Fonts (or another source) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/* Import fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Caveat&family=Orbitron:wght@700&display=swap');
